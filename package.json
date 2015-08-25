@@ -1,0 +1,22 @@
+{
+  "name": "bible-project",
+  "version": "1.0.0",
+  "description": "Allows users the ability to copy verses and even entire books of the Bible while verifying accuracy, allow formatting, notes, and keeping track of total progress.",
+  "main": "app.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrazyBS/bibleProject.git"
+  },
+  "keywords": [
+    "bible"
+  ],
+  "author": "Brenton Pyl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrazyBS/bibleProject/issues"
+  },
+  "homepage": "https://github.com/CrazyBS/bibleProject#readme"
+}
