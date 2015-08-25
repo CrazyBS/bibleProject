@@ -19,6 +19,21 @@ require.config({
   // dynamically load all test files
   deps: allTestFiles,
 
+  shim: {
+    lodash : {
+      exports : '_'
+    },
+    angular : {
+      exports : 'angular'
+    }
+  },
+
+  paths: {
+    requirejs: 'app/bower_components/requirejs/require',
+    angular: 'app/bower_components/angular/angular',
+    lodash: 'app/bower_components/lodash/lodash'
+  },
+
   // we have to kickoff jasmine, as it is asynchronous
   callback: window.__karma__.start
 });

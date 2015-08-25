@@ -4,7 +4,9 @@
   "description": "Allows users the ability to copy verses and even entire books of the Bible while verifying accuracy, allow formatting, notes, and keeping track of total progress.",
   "main": "app.js",
   "scripts": {
-    "test": "karma start"
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
     "bower": "^1.5.1",
     "bower-requirejs": "^1.1.3",
     "grunt": "^0.4.5"
+  },
+  "dependencies": {
+    "http-server": "^0.8.0"
   }
 }
