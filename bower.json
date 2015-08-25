@@ -1,0 +1,27 @@
+{
+  "name": "bibleProject",
+  "version": "1.0.0",
+  "homepage": "https://github.com/CrazyBS/bibleProject",
+  "authors": [
+    "Brenton Pyl <bpyl@hotmail.com>"
+  ],
+  "description": "Allows users the ability to copy verses and even entire books of the Bible while verifying accuracy, allow formatting, notes, and keeping track of total progress.",
+  "main": "main.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "bible"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.20"
+  }
+}
