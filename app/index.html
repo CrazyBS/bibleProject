@@ -1,12 +1,17 @@
 <html>
 <head>
     <title>Bible Project</title>
-    <script data-main="config.js" src="bower_components/requirejs/require.js"></script>
+    <script data-main="config.js" src="./bower_components/requirejs/require.js"></script>
+    <link type="text/css" rel="stylesheet" href="./module/bible/css/bible.css">
 </head>
 <body>
     <div id="bibleApp">
+        <div id="bibleExplorer" data-ng-include="'module/bible/view/explorer.html'" data-ng-controller="bibleExplorer">
 
+        </div>
+        <div id="bibleEditor" data-ng-include="'module/bible/view/editor.html'" data-ng-controller="bibleEditor">
+
+        </div>
     </div>
-
 </body>
 </html>

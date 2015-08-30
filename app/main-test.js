@@ -29,9 +29,9 @@ require.config({
   },
 
   paths: {
-    requirejs: 'app/bower_components/requirejs/require',
-    angular: 'app/bower_components/angular/angular',
-    lodash: 'app/bower_components/lodash/lodash'
+    requirejs: 'bower_components/requirejs/require',
+    angular: 'bower_components/angular/angular',
+    lodash: 'bower_components/lodash/lodash'
   },
 
   // we have to kickoff jasmine, as it is asynchronous

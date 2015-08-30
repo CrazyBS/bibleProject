@@ -10,7 +10,8 @@ require.config({
   paths: {
     requirejs: 'bower_components/requirejs/require',
     angular: 'bower_components/angular/angular',
-    lodash: 'bower_components/lodash/lodash'
+    lodash: 'bower_components/lodash/lodash',
+    modernizer: 'bower_components/modernizer/modernizr'
   },
   packages: [
 
