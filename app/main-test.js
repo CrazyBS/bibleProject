@@ -19,21 +19,32 @@ require.config({
   // dynamically load all test files
   deps: allTestFiles,
 
+  // Bad chaining to ensure proper loading of all dependencies I want available in my tests
   shim: {
     lodash : {
       exports : '_'
     },
     angular : {
       exports : 'angular'
+    },
+    "sinon-ng" : {
+      deps : ['angular']
+    },
+    "angular-mocks" : {
+      deps:['sinon-ng'],
+      exports: 'angular.mocks'
     }
   },
 
   paths: {
     requirejs: 'bower_components/requirejs/require',
     angular: 'bower_components/angular/angular',
-    lodash: 'bower_components/lodash/lodash'
+    lodash: 'bower_components/lodash/lodash',
+    modernizer: 'bower_components/modernizer/modernizr',
+    "sinon-ng": 'bower_components/sinon-ng/sinon-ng',
+    "angular-mocks": 'bower_components/angular-mocks/angular-mocks'
   },
 
-  // we have to kickoff jasmine, as it is asynchronous
+  // we have to kickoff mocha, as it is asynchronous
   callback: window.__karma__.start
 });

@@ -22,8 +22,13 @@
     "tests"
   ],
   "dependencies": {
-    "requirejs": "~2.1.20",
-    "angular": "~1.4.4",
-    "modernizer": "~2.8.2"
+    "requirejs": "^2.1.20",
+    "angular": "^1.4.5",
+    "lodash": "^3.10",
+    "modernizer": "^2.8.2"
+  },
+  "devDependencies": {
+    "sinon-ng": "~0.1.2",
+    "angular-mocks": "~1.4.5"
   }
 }
