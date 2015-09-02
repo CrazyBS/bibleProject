@@ -1,18 +1,5 @@
 // Karma configuration
 // Generated on Mon Aug 24 2015 20:35:08 GMT-0700 (Pacific Daylight Time)
-//require('mocha-sinon');
-var path = require('path');
-
-var createPattern = function(path) {
-  return {pattern: path, included: true, served: true, watched: false};
-};
-
-
-var initMochaSinon = function(files) {
-  files.unshift(createPattern(path.dirname(require.resolve('mocha')) + '/mocha-sinon.js'));
-};
-
-initMochaSinon.$inject = ['config.files'];
 
 module.exports = function (config) {
   config.set({
@@ -22,7 +9,18 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha','phantomjs-shim','requirejs','sinon','chai-as-promised','chai',{"framework:mocha-sinon": ['factory', initMochaSinon]}],
+    frameworks : ['requirejs','mocha-sinon','mocha','sinon','chai-as-promised','chai','phantomjs-shim'],
+
+    plugins: ['karma-chrome-launcher',
+              'karma-phantomjs-launcher',
+              'karma-mocha',
+              'karma-phantomjs-shim',
+              'karma-requirejs',
+              'karma-sinon',
+              'karma-chai-as-promised',
+              'karma-chai',
+              require('./plugins/karma-mocha-sinon')
+    ],
 
     // list of files / patterns to load in the browser
     files: [
@@ -56,14 +54,14 @@ module.exports = function (config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome','PhantomJS'],
+    browsers: ['PhantomJS'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

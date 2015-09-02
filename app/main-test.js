@@ -32,7 +32,7 @@ require.config({
     },
     "angular-mocks" : {
       deps:['sinon-ng'],
-      exports: 'angular.mocks'
+      exports: 'angular.mock'
     }
   },
 
