@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "sinon-ng": "~0.1.2",
-    "angular-mocks": "~1.4.5"
+    "angular-mocks": "~1.4.5",
+    "normalize.css": "~3.0.3"
   }
 }

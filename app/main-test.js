@@ -1,5 +1,5 @@
 var allTestFiles = [];
-var TEST_REGEXP = /(spec|test)\.js$/i;
+var TEST_REGEXP = /(test)\.js$/i;
 
 // Get a list of all the test files to include
 Object.keys(window.__karma__.files).forEach(function(file) {
@@ -25,24 +25,25 @@ require.config({
       exports : '_'
     },
     angular : {
-      exports : 'angular'
+      exports : 'angular',
+      deps : ['sinon-ng']
     },
     "sinon-ng" : {
-      deps : ['angular']
+      deps   : ['the-real-angular'],
+      exports: 'sinon'
     },
-    "angular-mocks" : {
-      deps:['sinon-ng'],
-      exports: 'angular.mock'
+    'the-real-angular' : {
+      exports : 'angular'
     }
-  },
+  }
+  ,
 
   paths: {
-    requirejs: 'bower_components/requirejs/require',
-    angular: 'bower_components/angular/angular',
     lodash: 'bower_components/lodash/lodash',
     modernizer: 'bower_components/modernizer/modernizr',
-    "sinon-ng": 'bower_components/sinon-ng/sinon-ng',
-    "angular-mocks": 'bower_components/angular-mocks/angular-mocks'
+    angular : './bower_components/angular-mocks/angular-mocks',
+    "sinon-ng": './bower_components/sinon-ng/sinon-ng',
+    "the-real-angular": './bower_components/angular/angular'
   },
 
   // we have to kickoff mocha, as it is asynchronous

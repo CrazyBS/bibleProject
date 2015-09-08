@@ -6,9 +6,10 @@ var createPattern = function(path) {
 
 
 var initMochaSinon = function(files) {
-  files.unshift(createPattern(path.dirname(require.resolve('mocha-sinon')) + '/mocha-sinon.js'));
+  files.unshift(createPattern(path.join(__dirname, 'adapter.js')));
+  files.unshift(createPattern(path.resolve(require.resolve('jasmine-sinon'))));
 };
 
 initMochaSinon.$inject = ['config.files'];
 
-module.exports = {"framework:mocha-sinon": ['factory', initMochaSinon]};
+module.exports = {"framework:jasmine-sinon": ['factory', initMochaSinon]};

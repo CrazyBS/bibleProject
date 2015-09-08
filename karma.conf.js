@@ -9,30 +9,35 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks : ['requirejs','mocha-sinon','mocha','sinon','chai-as-promised','chai','phantomjs-shim'],
+    frameworks : ['requirejs','jasmine-sinon','sinon','phantomjs-shim','jasmine'],
 
     plugins: ['karma-chrome-launcher',
               'karma-phantomjs-launcher',
-              'karma-mocha',
               'karma-phantomjs-shim',
               'karma-requirejs',
               'karma-sinon',
-              'karma-chai-as-promised',
-              'karma-chai',
-              require('./plugins/karma-mocha-sinon')
+              'karma-jasmine',
+              //'karma-jasmine-as-promised',
+              require('./plugins/karma-jasmine-sinon')
     ],
 
     // list of files / patterns to load in the browser
     files: [
-      {
-        pattern: './**/*.js',
-        included: false
-      },
-      'main-test.js'
-    ],
+            {
+              pattern: './module/**/*.js',
+              included: false, served: true, watched: true
+            },
+            {
+              pattern: './bower_components/**/*.js',
+              included: false, served: true, watched: false
+            },
+            'main-test.js'
+         ],
 
     // list of files to exclude
     exclude: [
+      '/**/spec/*.js',
+      '/**/spec/**/*.js',
       'main.js',
       'config.js'
     ],
@@ -65,12 +70,12 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
-
-    client : {
-      mocha : {
-        ignoreLeaks : false
-      }
-    }
+    singleRun: false
+    //
+    //client : {
+    //  mocha : {
+    //    ignoreLeaks : false
+    //  }
+    //}
   })
 };

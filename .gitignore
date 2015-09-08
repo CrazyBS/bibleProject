@@ -29,3 +29,5 @@ app/bower_components
 
 # IntelliJ
 .idea
+
+css/

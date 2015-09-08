@@ -1,18 +1,24 @@
 <html>
 <head>
     <title>Bible Project</title>
-    <script src="./bower_components/angular/angular.js"></script>
     <script data-main="config.js" src="./bower_components/requirejs/require.js"></script>
+    <link type="text/css" rel="stylesheet" href="./bower_components/normalize.css/normalize.css">
     <link type="text/css" rel="stylesheet" href="./module/bible/css/bible.css">
 </head>
 <body>
-    <div id="bibleApp">
+<div style="width:100%;height:100%;position:fixed;top:0;left:0;overflow:hidden;">
+    <div id="bibleApp" style="width: 20%; height: 100%;float:left;background-color:green;">
         <div id="bibleExplorer" data-ng-include="'module/bible/view/explorer.html'" data-ng-controller="bibleExplorer">
 
         </div>
-        <div id="bibleEditor" data-ng-include="'module/bible/view/editor.html'" data-ng-controller="bibleEditor">
-
+    </div>
+    <div style="float:left;width: 80%;height:100%;">
+        <div id="bibleChapter" data-ng-include="'module/bible/view/chapter.html'" data-ng-controller="bibleChapter" style="width:100%;height:80%;background-color:red; overflow: auto">
+        </div>
+        <div id="bibleEditor" data-ng-include="'module/bible/view/editor.html'" data-ng-controller="bibleEditor" style="width:100%;background-color: blue;height:20%;min-height:200px;">
+            Editing Box
         </div>
     </div>
+</div>
 </body>
 </html>
