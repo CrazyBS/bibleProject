@@ -31,3 +31,6 @@ app/bower_components
 .idea
 
 css/
+
+#Remove API keys
+service/apiKey.js

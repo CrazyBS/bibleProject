@@ -1,7 +1,7 @@
-define(['angular','lodash'], function (angular,_) {
-  var module = angular.module('bibleApp.explorerController', []);
+define(['angular','lodash','module/bible/service/referenceService'], function (angular,_) {
+  var module = angular.module('bibleApp.explorerController',['bibleApp.referenceService']);
 
-  module.controller('bibleExplorer', ['$scope', function ($scope) {
+  module.controller('bibleExplorer', ['$scope','VersionModel', function ($scope, VersionModel) {
 
   }]);
 });

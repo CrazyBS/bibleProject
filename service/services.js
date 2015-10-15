@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 
-var ref = require('./ref/referenceService');
 var user = require('./user/userService');
+var ref = require('./refService');
 
 app.use('/ref', ref);
 app.use('/user', user);
