@@ -30,7 +30,7 @@ app/bower_components
 # IntelliJ
 .idea
 
-css/
+**/css/*
 
 #Remove API keys
 service/apiKey.js
