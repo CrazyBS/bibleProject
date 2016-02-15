@@ -21,7 +21,7 @@ define(['module/bibleModule'], function () {
             expect(resp.data).toEqual(res);
             done();
           });
-
+		  
           $httpBackend.flush();
       });
     });

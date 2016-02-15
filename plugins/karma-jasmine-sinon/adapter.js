@@ -36,5 +36,8 @@
     if (leaked.length > 0)
       throw new Error('Leaked global variables: [' + leaked.join(', ') + ']')
   });
+  
+  // TODO: Perhaps we should check for polluted globals as well?
+  
 
 })(window.sinon, window.beforeEach, window.afterEach);
