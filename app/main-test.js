@@ -1,5 +1,5 @@
 var allTestFiles = [];
-var TEST_REGEXP = /(test)\.js$/i;
+var TEST_REGEXP = /^((?!main).)*test\.js$/i; // Should include all files that end in "-test.js", but NOT "main-test.js"
 
 // Get a list of all the test files to include
 Object.keys(window.__karma__.files).forEach(function(file) {
@@ -39,11 +39,12 @@ require.config({
   ,
 
   paths: {
-    lodash: 'bower_components/lodash/lodash',
-    modernizer: 'bower_components/modernizer/modernizr',
+    lodash: './bower_components/lodash/lodash',
+    modernizer: './bower_components/modernizer/modernizr',
     angular : './bower_components/angular-mocks/angular-mocks',
     "sinon-ng": './bower_components/sinon-ng/sinon-ng',
-    "the-real-angular": './bower_components/angular/angular'
+    "the-real-angular": './bower_components/angular/angular',
+    "env-config": './config/env-test-config'
   },
 
   // we have to kickoff mocha, as it is asynchronous

@@ -7,6 +7,10 @@ define(['module/bible/controller/chapter'], function () {
         this.chapterController = $controller('bibleChapter', {'$scope': $rootScope});
         this.$scope = $rootScope;
       }));
+
+      it('testing everything is happy', function () {
+        expect(true).toEqual(true);
+      })
     });
   });
 });

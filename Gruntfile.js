@@ -13,10 +13,20 @@ module.exports = function (grunt) {
           }
         ]
       }
+    },
+    watch: {
+      scripts: {
+        files: '**/*.less',
+        tasks: ['less:dev'],
+        options: {
+          debounceDelay: 250
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['less:dev']);
 };
